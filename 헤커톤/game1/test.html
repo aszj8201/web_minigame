@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/헤커톤/game1/test.css">
+</head>
+
+<body>
+    <td class="p-0 d-xl-table-cell d-none">
+        <ul class="p-0 m-0">
+            <li *ngFor='let item of product.items' class="def-number-input number-input d-flex justify-content-center">
+                <input type="number" [(ngModel)]="item.quantity" (change)="this.updateCart(item)"
+                    style="height: 45px; line-height: 45px" min="0">
+            </li>
+        </ul>
+    </td>
+</body>
+<style>
+    input {
+        text-align: center;
+        border: 1px solid #6C757D;
+    }
+
+    .number-input input[type="number"] {
+        -webkit-appearance: textfield !important;
+        -moz-appearance: textfield !important;
+        appearance: textfield !important;
+    }
+
+    .number-input input[type=number]::-webkit-inner-spin-button,
+    .number-input input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .number-input {
+        margin-bottom: 20px;
+        padding-top: 20px !important;
+    }
+</style>
+
+</html>

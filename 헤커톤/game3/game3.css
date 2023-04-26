@@ -1,0 +1,94 @@
+@import "reset.css";
+/* @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css'); */
+body {
+    background-image: url(/menu/image/backgroundimg.jpg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    position: relative;
+    user-select: none;
+    /* font-family: 'Galmuri9'; */
+}
+
+a{
+    /* text-decoration: none; */
+}
+
+.backimg{
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 20px;
+    left: 0;
+    top: 0;
+}
+
+.canvas {
+    width: 450px;
+    height: 450px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+    cursor:url(https://img.icons8.com/ios/32/paint.png) 0 32, auto;
+}
+
+.controls {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls .controls__btns {
+    margin-bottom: 20px;
+}
+
+.controls__btns button {
+    all: unset;
+    cursor: pointer;
+    background: white;
+    padding: 7px 15px;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 70px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.controls__btns button:active {
+    transform: scale(0.98);
+}
+
+.controls__btns button:hover{
+    box-shadow: 1px 1px 2px rgb(224, 118, 118), 0 0 25px rgb(215, 153, 153), 0 0 5px rgb(222, 102, 102);
+}
+
+.controls .controls__colors {
+    display: flex;
+}
+
+.controls__colors .controls__color {
+    cursor:url(/game3/image/palette.png) 20 20, auto;
+    transition: 0.5s;
+    width: 50px;
+    height: 50px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+}
+
+.controls .controls__range {
+    margin-bottom: 20px;
+}
+
+.on {
+    transform: scale(0.7);
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://hwp.polarisoffice.com/banner/index-prod.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.min.js.다운로드" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./css2" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 0px;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      .goodsTemplate {
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        width: 466px;
+       
+       /*  margin: 1px; */
+        height: 100%;
+        height: 67px;
+        border-radius: 2px;
+        border: solid 1px #dfdfdf;
+        padding: 1px;
+        box-sizing: border-box;
+      }
+
+      .goodsTemplate :hover {
+        cursor: pointer;
+      }
+
+      .goodsThumnail {
+        /*  border-radius: 6px; */
+        height: 63px;
+        width: 65px;
+       /*  margin: 1px; */
+        /*  width: 120px; */
+        /* border: 1px solid rgba(128, 128, 128, 0.3); */
+      }
+      .goodsThumnailWrapper {
+        position: relative;
+      }
+
+      .goodsThumnailRibbon {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1px;
+        top: 0px;
+        left: 0px;
+        background-image: linear-gradient(111deg, #f47852 12%, #f55f5f 88%);
+        color: #fff;
+        font-size: 8px;
+        /*  padding: 4px; */
+        font-weight: 700;
+        width: 40px;
+        height: 19px;
+      }
+      .goodsDesc {
+        font-size: 15px;
+      }
+
+      .goodsInfoWrapper {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .goodsPriceInfoWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .goodsPriceInfoDiscountRate {
+        color: #f84000;
+        font-weight: 700;
+        font-size: 15px;
+      }
+      .goodsPriceInfoSellingPrice {
+        font-weight: 700;
+        font-size: 17px;
+        margin-left: 8px;
+      }
+      .goodsPriceInfoRetailPrice {
+        color: gray;
+        text-decoration: line-through;
+        margin-left: 8px;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body style="position: relative">
+    <div id="banner"><div class="goodsTemplate" id="" style="display: flex;">
+      <div class="goodsThumnailWrapper">
+        <div class="goodsThumnailRibbon">
+          최저가
+          <!--  <div class="goodsThumnailRibbonText"></div> -->
+        </div>
+        <img class="goodsThumnail" src="./0060010005453.jpg" alt="" srcset="">
+      </div>
+      <div class="goodsInfoWrapper">
+        <div class="goodsDesc">[특가]듀얼분사 충전식 무드등 가습기</div>
+        <div class="goodsPriceInfoWrapper">
+          <div class="goodsPriceInfoDiscountRate">69%</div>
+          <div class="goodsPriceInfoSellingPrice">19,900원</div>
+          <div class="goodsPriceInfoRetailPrice">65,900원</div>
+        </div>
+      </div>
+    </div></div>
+    <div class="goodsTemplate" id="tempalte" style="display: none">
+      <div class="goodsThumnailWrapper">
+        <div class="goodsThumnailRibbon">
+          최저가
+          <!--  <div class="goodsThumnailRibbonText"></div> -->
+        </div>
+        <img class="goodsThumnail" src="./0060010003793.jpg" alt="" srcset="">
+      </div>
+      <div class="goodsInfoWrapper">
+        <div class="goodsDesc">프리미엄급 음질, 인체공학 착용</div>
+        <div class="goodsPriceInfoWrapper">
+          <div class="goodsPriceInfoDiscountRate">34%</div>
+          <div class="goodsPriceInfoSellingPrice">10500원</div>
+          <div class="goodsPriceInfoRetailPrice">120000원</div>
+        </div>
+      </div>
+    </div>
+  
+
+  <script>
+    let goodsList = [];
+    let goodsListIndex = 0;
+
+    const getGoodsList = () => {
+      fetch('https://woxpo-dashboard.herokuapp.com/api/banner/getOMANGoodsList')
+        .then((res) => res.json())
+        .then((data) => {
+          goodsList = data.content.ad_goods.goods;
+          changeGoods();
+          setInterval(() => {
+            changeGoods();
+          }, 3200); //3500
+        });
+    };
+
+    const changeGoods = () => {
+      const bannerWrapperEle = $('#banner');
+      bannerWrapperEle.empty();
+      const firstItem = goodsList[goodsListIndex];
+      const tempalte = $('#tempalte').clone();
+      tempalte.attr('id', '');
+      tempalte.css('display', 'flex');
+      tempalte.find('.goodsDesc').text(firstItem.product_name);
+      tempalte.find('.goodsThumnail').attr('src', firstItem.image_url);
+
+      tempalte.find('.goodsPriceInfoDiscountRate').text(`${firstItem.discount_rate}%`);
+      tempalte
+        .find('.goodsPriceInfoSellingPrice')
+        .text(`${firstItem.selling_price.toLocaleString('ko-KR')}원`);
+      tempalte
+        .find('.goodsPriceInfoRetailPrice')
+        .text(`${firstItem.retail_price.toLocaleString('ko-KR')}원`);
+      tempalte.on('click', () => {
+        window.open(firstItem.url + '?utm_source=weboffice&utm_medium=banner&utm_campaign=api');
+      });
+      bannerWrapperEle.append(tempalte);
+
+      goodsListIndex++;
+
+      if (goodsListIndex >= goodsList.length - 1) {
+        goodsListIndex = 0;
+      }
+    };
+
+    getGoodsList();
+  </script>
+
+</body></html>

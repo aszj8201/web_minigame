@@ -1,0 +1,254 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Galmuri9';
+    user-select: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+body{
+    height: 100vh;
+    background-image: url(/menu/image/backgroundimg.jpg);
+    position: relative;
+}
+
+.backimg{
+    z-index: 999;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 20px;
+    left: 0;
+    top: 0;
+}
+
+.wrap{
+    padding: 50px;
+}
+
+.box{
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    margin: 0 auto;
+    width: 51.8%;
+    height: 35vh;
+    position: relative;
+    padding: 10px;
+}
+
+.boxinone{
+    /* border: 1px solid black; */
+    height: 60%;
+}
+
+.list{
+    width: 8.6vw;
+    height: 4vh;
+    border: 3px solid skyblue;
+    border-radius: 10px;
+    margin: 0.2em;
+    margin-top: 3vh;
+    
+}
+
+.list:focus {
+    outline: none;
+    transition: 0.3s;
+}
+
+.list:hover{
+    box-shadow: 1px 1px 2px rgb(118, 150, 224), 0 0 25px rgb(153, 215, 212), 0 0 5px rgb(123, 188, 228);
+}
+
+.list:active{
+    box-shadow: 1px 1px 2px rgb(118, 150, 224), 0 0 25px rgb(153, 215, 212), 0 0 5px rgb(123, 188, 228);
+}
+
+.list[type=text] {
+    padding-left: 0.3rem;
+}
+
+.list:first-child{
+    margin-right: -0.3vw;
+    /* margin-top: -3vh; */
+}
+
+.list:visited{
+    border: 3px solid aqua;
+}
+
+.list::placeholder{
+    padding-left: 0.3rem;
+    font-size: 1rem;
+    opacity: calc(50%);
+}
+
+.boxintwo{
+    border-top: 1px solid black;
+    height: 40%;
+}
+
+.thisc{
+    margin-top: 0.5vh;
+    display: flex;
+    border: 1px solid black;
+    width: 16vw;
+    justify-content: center;
+}
+
+.thisc:visited{
+    width: 600px;
+}
+
+.thisc p{
+    /* border: 1px solid black; */
+}
+
+.result{
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+.main{
+    height: 12vh;
+    width: 50%;
+    /* border: 1px solid black; */
+    /* background-color: aquamarine; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.value{
+    margin-top: 2vh;
+    display: flex;
+    /* border: 1px solid black; */
+    align-items: center;
+    height: 10vh;
+}
+
+.valuep {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.listarr{
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.number{
+    font-size: 40px;
+    font-weight: 100;
+    padding-left: 10px ;
+    padding-right: 10px ;
+    padding-bottom: 5px;
+}
+
+.number:hover{
+    transition: 0.3s;
+    color: rgb(7, 255, 247);
+    /* box-shadow: 1px 1px 2px rgb(77, 77, 79), 0 0 25px rgb(13, 19, 19), 0 0 5px rgb(4, 16, 24); */
+}
+
+.number:active{
+    transition: 0.3s;
+    /* box-shadow: 1px 1px 2px rgb(215, 252, 1), 0 0 25px rgb(166, 255, 0), 0 0 5px rgb(6, 255, 205); */
+}
+
+.pm{
+    /* background: none; */
+    /* margin-top: 10px; */
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    padding: 0px;
+}
+
+.pm:hover{
+    transition: 0.3s;
+    /* color: aquamarine; */
+    /* box-shadow: 0px 0px 0px rgb(77, 77, 79), 0 0 25px rgb(13, 19, 19), 0 0 5px rgb(4, 16, 24); */
+}
+
+.pm:active{
+    transition: 0.3s;
+    background-color: rgb(117, 198, 255);
+    box-shadow: 1px 1px 2px rgb(215, 252, 1), 0 0 25px rgb(166, 255, 0), 0 0 5px rgb(6, 255, 205);
+}
+
+.sex{
+    /* border: 1px solid black; */
+    border-radius: 50%;
+}
+
+
+.btn{
+    /* background-color: rgb(11, 13, 13); */
+    /* color: #fff; */
+    border: none;
+    background: none;
+}
+
+.math{
+    /* border: 1px solid black; */
+    margin-right: 3vw;
+    margin-top: 3vh;
+    display: flex;
+}
+
+.mainb{
+    border: 3px solid black;
+    font-weight: 700;
+    width: 7vw;
+    height: 40%;
+    border-radius: 10px;
+    margin: 5px;
+    /* background-color: rgb(225, 242, 249); */
+}
+
+.mainb:hover{
+    box-shadow: 1px 1px 2px rgb(77, 77, 79), 0 0 25px rgb(13, 19, 19), 0 0 5px rgb(4, 16, 24);
+}
+
+.mainb:active{
+    box-shadow: 1px 1px 2px rgb(215, 252, 1), 0 0 25px rgb(166, 255, 0), 0 0 5px rgb(6, 255, 205);
+}
+
+.red{
+    color: red;
+}
+
+.easter{
+    border-top: 2px solid black;
+    width: 99.9vw;
+    height: 40vh;
+    position: absolute;
+    left: 1px;   
+    /* bottom: 0; */    
+    /* display: flex; */
+}
+
+.easter p{
+    font-size: 30px;
+    padding: 10px;
+    /* border: 1px solid black; */
+    height: 17%;
+    width: 21.4%;
+    /* margin-left: 5vw; */
+    /* margin-bottom: 30px; */
+}
+
+.eez{
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid black; */
+    margin-top: 20vh;
+}

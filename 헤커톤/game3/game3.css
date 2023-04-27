@@ -31,6 +31,7 @@ a{
     border-radius: 10px;
     box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
     cursor:url(https://img.icons8.com/ios/32/paint.png) 0 32, auto;
+    margin-top: 5%;
 }
 
 .controls {
